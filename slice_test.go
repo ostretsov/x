@@ -31,3 +31,15 @@ func TestFilter(t *testing.T) {
 		}
 	})
 }
+
+func TestContains(t *testing.T) {
+	if Contains(nil, 0) {
+		t.Error("nil slice shouldn't contain 0")
+	}
+	if Contains([]int{}, 0) {
+		t.Error("empty slice shouldn't contain 0")
+	}
+	if !Contains([]int{0, 1, 2, 3, 1}, 1) {
+		t.Errorf("should contain 1")
+	}
+}
