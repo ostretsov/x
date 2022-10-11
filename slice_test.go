@@ -18,7 +18,7 @@ func TestFilter(t *testing.T) {
 		s := []int{}
 		got := Filter(s, func(_ int) bool { return true })
 		if len(got) != 0 {
-			t.Errorf("want 0 length; got %d", len(got))
+			t.Error("want 0 length; got ", len(got))
 		}
 	})
 
